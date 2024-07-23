@@ -1,9 +1,12 @@
-import gc from './GenerateCode'
-
-const DisplayCode = ({url}) =>{
-
+const DisplayCode = ({qrCodeURL}) =>{
+    
     return(
-        gc(url)
+        <>
+            {qrCodeURL ? 
+                (<><img src={qrCodeURL} alt='QRCode'/><p>Scan QR Code</p></>) :
+                (<p>Enter a URL to generate a QR Code</p>)
+            }
+        </>   
     )
 }
 
